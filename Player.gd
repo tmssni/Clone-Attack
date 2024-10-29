@@ -1,5 +1,5 @@
 extends Area2D
-
+#please work
 signal hit
 
 @export var speed = 400.0
