@@ -42,7 +42,6 @@ height = 138.0
 
 [node name="Player" type="Area2D"]
 script = ExtResource("1_0rdda")
-speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7rlfp")
@@ -53,5 +52,5 @@ shape = SubResource("CapsuleShape2D_gxk1g")
 disabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="hit" from="." to="." method="new_game"]
 [connection signal="hit" from="." to="." method="game_over"]
+[connection signal="hit" from="." to="." method="new_game"]

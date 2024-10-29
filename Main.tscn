@@ -26,12 +26,6 @@ color = Color(0.156866, 0.391111, 0.394334, 1)
 [node name="Player" parent="." instance=ExtResource("3_qplh0")]
 position = Vector2(240, 450)
 
-[node name="MobPath" type="Path2D" parent="."]
-scale = Vector2(1, 1.00667)
-curve = SubResource("Curve2D_ep1yn")
-
-[node name="MobPathLocation" type="PathFollow2D" parent="MobPath"]
-
 [node name="MobTimer" type="Timer" parent="."]
 wait_time = 0.5
 autostart = true
@@ -44,6 +38,12 @@ one_shot = true
 
 [node name="StartPosition" type="Marker2D" parent="."]
 position = Vector2(240, 450)
+
+[node name="MobPath" type="Path2D" parent="."]
+scale = Vector2(1, 1.00667)
+curve = SubResource("Curve2D_ep1yn")
+
+[node name="MobPathLocation" type="PathFollow2D" parent="MobPath"]
 
 [node name="HUD" parent="." instance=ExtResource("4_ooy7g")]
 

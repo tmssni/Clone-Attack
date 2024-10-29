@@ -4,8 +4,8 @@ extends CanvasLayer
 signal start_game
 
 func show_message(text):
-	$Message.text = text
-	$Message.show()
+	$MessageLabel.text = text
+	$MessageLabel.show()
 	$MessageTimer.start()
 	
 func show_game_over():
@@ -13,18 +13,18 @@ func show_game_over():
 	# Wait until the MessageTimer has counted down.
 	await $MessageTimer.timeout
 
-	$Message.text = "Dodge the Creeps!"
-	$Message.show()
+	$MessageLabel.text = "Dodge the Creeps!"
+	$MessageLabel.show()
 	# Make a one-shot timer and wait for it to finish.
-	await get_tree().create_timer(1.0).timeout
+	await get_tree().create_timer(1).timeout
 	$StartButton.show()
 
 func update_score(score):
 	$ScoreLabel.text = str(score)
 
-func _on_start_button_pressed() -> void:
+func _on_start_button_pressed():
 	$StartButton.hide()
 	start_game.emit()
 
-func _on_message_timer_timeout() -> void:
-	$Message.hide()
+func _on_message_timer_timeout():
+	$MessageLabel.hide()
